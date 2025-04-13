@@ -1,0 +1,31 @@
+2025-04-13 20:01:15,886 INFO  [main] o.v.scraper.main.AmazonScraper - Iniciando aplicação de scraping...
+2025-04-13 20:01:17,214 INFO  [main] o.v.scraper.main.AmazonScraper - Banco de dados inicializado.
+2025-04-13 20:01:17,878 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:17,949 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:20,315 INFO  [main] o.v.scraper.main.AmazonScraper - Buscando página de listagem: https://www.amazon.com.br/s?k=Displayport+KVM+Switch+2+monitores+2
+2025-04-13 20:01:24,151 INFO  [main] o.v.scraper.main.AmazonScraper - 10 URLs de produtos encontrados.
+2025-04-13 20:01:24,206 INFO  [pool-1-thread-3] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:24,207 INFO  [pool-1-thread-4] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:24,211 INFO  [pool-1-thread-2] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:24,215 INFO  [pool-1-thread-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:24,219 INFO  [pool-1-thread-3] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:24,222 INFO  [pool-1-thread-4] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:24,226 INFO  [pool-1-thread-2] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:24,226 INFO  [pool-1-thread-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:36,833 INFO  [pool-1-thread-2] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:36,849 INFO  [pool-1-thread-2] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:37,074 INFO  [pool-1-thread-4] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:37,089 INFO  [pool-1-thread-4] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:38,375 INFO  [pool-1-thread-3] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:38,398 INFO  [pool-1-thread-3] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:47,952 INFO  [pool-1-thread-4] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:47,953 INFO  [pool-1-thread-2] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:47,968 INFO  [pool-1-thread-2] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:47,967 INFO  [pool-1-thread-4] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:01:48,765 INFO  [pool-1-thread-3] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:01:48,801 INFO  [pool-1-thread-3] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:02:57,857 WARN  [main] o.v.scraper.main.AmazonScraper - Produto não extraído. Objeto null retornado.
+2025-04-13 20:02:57,858 INFO  [main] o.v.scraper.main.AmazonScraper - Total de produtos extraídos com sucesso: 9
+2025-04-13 20:02:57,897 INFO  [main] o.v.scraper.main.AmazonScraper - Produtos salvos no banco de dados.
+2025-04-13 20:02:57,929 INFO  [main] o.v.scraper.main.AmazonScraper - Dados exportados para JSON: outputs/products_info_20250413_200257.json
+2025-04-13 20:02:57,929 INFO  [main] o.v.scraper.main.AmazonScraper - Extração concluída.
