@@ -1,194 +1,151 @@
-# Amazon Scraper - Projeto em Java + Spring Boot + Selenium
+# Scraper Amazon - Spring Boot + Selenium + Docker + Kubernetes ☁️
 
-Este projeto é uma aplicação de scraping desenvolvida em Java com Spring Boot e Selenium WebDriver, projetada para extrair informações de produtos da Amazon e persistir em um banco de dados H2 em memória, com logs e saídas organizadas por data.
-
----
-
-## :rocket: Tecnologias Utilizadas
-- **Java 22**
-- **Spring Boot 3.0.5**
-- **Selenium WebDriver 4.9.0**
-- **WebDriverManager 5.4.0**
-- **H2 Database**
-- **Logback** (com `logback.xml` configurado)
-- **Gson** para JSON
-- **Docker** + **Docker Compose**
-- **Kubernetes (CronJob)**
+Aplicação Java que realiza scraping de produtos da Amazon Brasil com Selenium e armazena os dados em banco H2. A API é baseada em Spring Boot e está preparada para execução local, containerizada (Docker) ou orquestrada (Kubernetes).
 
 ---
 
-## :gear: Funcionalidades
-- Extração automatizada de produtos da Amazon
-- Persistência em banco relacional (H2)
-- Geração de arquivos `.json` com os produtos extraídos
-- Logs organizados com timestamp e arquivo `scraping.log`
-- Retry com backoff exponencial para falhas em elementos não encontrados
-- Modularização por responsabilidade:
-    - `ScraperService`, `SeleniumScraper`, `WebDriverManagerUtil`
-- Executável via REST endpoint: `/api/scraper?max=5`
-- Suporte a ambiente Docker e execução em Kubernetes (via CronJob)
+## 🧩 Tecnologias Utilizadas
+
+- **Java 22** + **Spring Boot 3**
+- **Spring Data JPA + H2 Database** (modo memória)
+- **Selenium WebDriver + WebDriverManager**
+- **Gson + Jackson** (serialização JSON)
+- **Logback (via SLF4J)** para logging customizado
+- **Spring Legacy Web (MVC)**
+- **Docker + Docker Compose**
+- **Kubernetes (deployment + service)**
 
 ---
 
-## :file_folder: Estrutura dos Diretórios
-```
-├── Dockerfile
-├── k8s
-│   └── scraper-cronjob.yaml
-├── logs
-│   └── scraping.log
-├── output
-│   └── products_info_YYYYMMDD_HHmmss.json
-├── src
-│   └── main
-│       └── java
-│           └── org.vinissius.scraper_spring
-│               ├── WebDriverConfig.java
-│               ├── WebDriverManagerUtil.java
-│               ├── SeleniumScraper.java
-│               ├── ScraperService.java
-│               ├── ScraperController.java
-│               ├── ProductEntity.java
-│               ├── ProductRepository.java
-│               └── SpringScraperApplication.java
-└── resources
-    ├── application.properties
-    └── logback.xml
-```
+## 📁 Arquitetura de Classes
+
+- `ScraperController`: Endpoint REST
+- `ScraperService`: Orquestra scraping e persistência
+- `SeleniumScraper`: Realiza scraping de fato via Selenium
+- `WebDriverManagerUtil`: Gerencia instância do ChromeDriver
+- `WebDriverConfig`: Configura opções do navegador
+- `ProductRepository`: Repositório Spring JPA
+- `ProductEntity`: Entidade JPA mapeada para a tabela `products`
 
 ---
 
-## :whale: Como Dockerizar
+## 📦 Execução Local
 
-### Dockerfile:
-```Dockerfile
-FROM eclipse-temurin:22-jdk-alpine
-WORKDIR /app
-COPY target/ScraperJava.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
-```
-
-### docker-compose.yaml:
-```yaml
-version: '3.8'
-services:
-  scraper:
-    build: .
-    container_name: amazon-scraper
-    volumes:
-      - ./logs:/app/logs
-      - ./output:/app/output
-    environment:
-      - LOG_LEVEL=INFO
-    restart: unless-stopped
-```
-
----
-
-## :shipit: Kubernetes (opcional)
-
-### `k8s/scraper-cronjob.yaml`
-```yaml
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: amazon-scraper
-spec:
-  schedule: "0 * * * *" # a cada hora
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          containers:
-            - name: scraper
-              image: viniciusssantos/amazon-scraper:latest
-              env:
-                - name: LOG_LEVEL
-                  value: INFO
-              volumeMounts:
-                - mountPath: /app/output
-                  name: output
-                - mountPath: /app/logs
-                  name: logs
-          restartPolicy: OnFailure
-          volumes:
-            - name: output
-              emptyDir: {}
-            - name: logs
-              emptyDir: {}
-          nodeSelector:
-            scraper: "true"
-          tolerations:
-            - key: "scraper-only"
-              operator: "Exists"
-              effect: "NoSchedule"
-```
-
----
-
-## :hammer_and_wrench: Como Executar
-
-### Localmente:
 ```bash
-./mvnw clean package
-java -jar target/ScraperJava.jar
+mvn spring-boot:run
 ```
 
-Acesse:
-```
+Acesse via:
+```http
 GET http://localhost:8080/api/scraper?max=5
 ```
 
-### Docker:
+---
+
+## 🐳 Docker
+
+### Build
 ```bash
-docker-compose up --build
+docker build -t amazon-scraper .
 ```
 
-### Kubernetes:
+### Run
 ```bash
-kubectl apply -f k8s/scraper-cronjob.yaml
+docker run -p 8080:8080 --rm amazon-scraper
 ```
 
 ---
 
-## :memo: Exemplo de JSON Gerado
+## ☸️ Kubernetes
+
+### Aplicação
+```bash
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+```
+
+### Acesso
+```bash
+kubectl port-forward svc/amazon-scraper 8080:8080
+curl http://localhost:8080/api/scraper?max=5
+```
+
+---
+
+## 📄 Exemplo de JSON extraído
 ```json
-[
-  {
-    "title": "DisplayPort Switch 8K",
-    "asin": "B0D7TR5XV3",
-    "price": "R$ 299,90",
-    "executedAt": "2025-04-13 21:28:20",
-    "url": "https://www.amazon.com.br/..."
-  },
-  ...
-]
+{
+  "title": "8K USB Displayport KVM Switch",
+  "price": "R$ 749,90",
+  "rating": "4.5 de 5 estrelas",
+  "url": "https://www.amazon.com.br/...",
+  "executedAt": "2025-04-13 21:28:25"
+}
 ```
 
 ---
 
-## :bulb: Melhorias Futuras
-- Exportação para S3, banco externo ou Google Sheets
-- Logs para stack ELK ou Grafana Loki
-- Auth na API para controle de acesso
-- Frontend para visualização dos produtos
-- Integração com email/Telegram para notificar novos produtos
-- Exportar para CSV e Excel
+## 📜 Spring Legacy
+
+A aplicação utiliza arquitetura baseada em Spring Boot com dependências compatíveis com projetos legados:
+
+- Utiliza `spring-boot-starter-web` com Spring MVC tradicional (Servlets + Controllers).
+- Sem uso de WebFlux ou módulos reativos, ideal para manutenção em ambientes legados.
+- Usa H2 como banco temporário (mas pode ser substituído facilmente por PostgreSQL ou MySQL).
 
 ---
 
-## :bookmark_tabs: Nome de Commit Sugerido
+## 🛠️ Funcionalidades Avançadas Implementadas
+
+- Retry com backoff exponencial ao falhar scraping
+- WebDriver configurado com Chrome Headless e rotações automáticas
+- Logs com timestamp e nível (scraping.log)
+- Exportação automática em JSON (`products_info_*.json`)
+- Modularização com responsabilidades claras
+- Suporte a múltiplos produtos com paralelismo (thread-safe)
+- Captura da data e hora da extração (`executedAt`)
+
+---
+
+## 📁 Estrutura de Diretórios
+
 ```
-feat: integração completa com Docker e Kubernetes + melhorias estruturais
+scraper-java/
+├── src/main/java/
+│   └── org/vinissius/scraper_spring/
+├── src/main/resources/
+│   ├── application.properties
+│   ├── logback.xml
+├── k8s/
+│   ├── deployment.yaml
+│   └── service.yaml
+├── Dockerfile
+└── README.md
+```
+
+
+## 📌 Melhorias Futuras
+
+- Armazenar logs e JSON em bucket S3 ou Azure Blob
+- Agendamento automático via `@Scheduled`
+- Monitoramento Prometheus + Grafana
+- Login básico para autenticar chamadas à API
+- Trocar H2 por PostgreSQL persistente
+
+---
+
+## 🧪 Teste de Endpoint
+```bash
+curl http://localhost:8080/api/scraper?max=5
 ```
 
 ---
 
-## :man_technologist: Autor
-**Vinicius Oliveira**  
-Desenvolvedor Java Backend, automação, scraping e sistemas distribuídos ☕
+## 👨‍💻 Autor
+Vinícius Oliveira  
+[LinkedIn](https://www.linkedin.com/in/)
 
 ---
 
-Se precisar, posso gerar badges para GitHub Actions, DockerHub, e Kubernetes também.
+MIT License
 
