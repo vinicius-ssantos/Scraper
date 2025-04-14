@@ -17,30 +17,36 @@
   </properties>
 
   <dependencies>
-    <!-- Spring Boot -->
+    <!-- Spring Boot Starter -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
       <version>3.0.5</version>
     </dependency>
 
-    <!-- Spring Boot JPA -->
+    <!-- Spring Boot Starter Data JPA -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
       <version>3.0.5</version>
     </dependency>
 
-    <!-- Database: Exemplo com H2 (memória) -->
-    <!-- (mude para org.xerial:sqlite-jdbc se quiser SQLite local) -->
+    <!-- H2 Database (In-memory para desenvolvimento) -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <scope>runtime</scope>
       <version>2.1.214</version>
+      <scope>runtime</scope>
     </dependency>
 
-    <!-- Selenium + WebDriverManager -->
+    <!-- Spring Boot Starter Web (para endpoints REST) -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>3.0.5</version>
+    </dependency>
+
+    <!-- Selenium e WebDriverManager -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
@@ -52,28 +58,7 @@
       <version>5.4.0</version>
     </dependency>
 
-    <!-- SLF4J + Logback (Spring Boot já tem logback, mas para caso precise) -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>2.0.7</version>
-    </dependency>
-    <!-- Spring Boot Starter Web, se quiser endpoints REST -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <version>3.0.5</version>
-    </dependency>
-
-    <!-- Testes com JUnit e Spring Boot -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <version>3.0.5</version>
-      <scope>test</scope>
-    </dependency>
-
-<!--    lombok -->
+    <!-- Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -81,27 +66,23 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- Para usar o @Data do Lombok -->
+    <!-- Spring Boot Starter Test -->
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.30</version>
-      <scope>compile</scope>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>3.0.5</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
     <plugins>
-      <!-- Plugin Spring Boot -->
+      <!-- Spring Boot Maven Plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>3.0.5</version>
-        <configuration>
-          <mainClass>org.vinissius.scraper_spring.SpringScraperApplication</mainClass>
-        </configuration>
       </plugin>
     </plugins>
   </build>
-
 </project>

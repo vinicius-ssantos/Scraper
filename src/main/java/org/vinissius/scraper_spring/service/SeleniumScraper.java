@@ -24,7 +24,7 @@ public class SeleniumScraper {
 
     private static final Logger log = LoggerFactory.getLogger(SeleniumScraper.class);
 
-    // O WebDriver injetado é de escopo "prototype" (veja WebDriverConfig)
+    // O WebDriver injetado é de escopo "prototype" (definido em WebDriverConfig)
     private final WebDriver webDriver;
 
     public SeleniumScraper(WebDriver webDriver) {
@@ -50,22 +50,29 @@ public class SeleniumScraper {
             for (WebElement item : items) {
                 if (count >= maxProducts) break;
                 try {
-                    // Extrai o link do produto
-                    WebElement link = item.findElement(By.cssSelector("a.a-link-normal"));
+                    // Tenta pegar o link do produto usando o seletor principal
+                    WebElement link = null;
+                    try {
+                        link = item.findElement(By.cssSelector("a.a-link-normal"));
+                    } catch (Exception e) {
+                        log.warn("Seletor primário não retornou elementos, tentando seletor alternativo. Erro: {}", e.getMessage());
+                        // Se desejar, adicione um seletor alternativo aqui, por exemplo:
+                        link = item.findElement(By.cssSelector("a.s-link-style"));
+                    }
                     String productUrl = link.getAttribute("href");
                     productUrl = cleanProductUrl(productUrl);
-                    // Extrai os dados do produto com um método separado
+                    // Extrai os dados do produto com método separado
                     ProductEntity product = scrapeProduct(productUrl);
                     if (product != null) {
                         products.add(product);
                         count++;
                     }
                 } catch (Exception e) {
-                    log.warn("Falha ao extrair um produto: {}", e.getMessage());
+                    log.warn("Falha ao extrair um produto da listagem: {}", e);
                 }
             }
         } catch (Exception e) {
-            log.error("Erro ao executar scraping da listagem: {}", e.getMessage());
+            log.error("Erro ao executar scraping da listagem: {}", e);
         } finally {
             webDriver.quit();
         }
@@ -73,7 +80,7 @@ public class SeleniumScraper {
     }
 
     /**
-     * Abre uma nova instância do WebDriver para acessar a página do produto e extrair seus dados.
+     * Cria uma nova instância do WebDriver para acessar a página do produto e extrair os dados.
      *
      * @param url URL do produto
      * @return ProductEntity com os dados extraídos ou null, se ocorrer erro
@@ -92,6 +99,7 @@ public class SeleniumScraper {
             try {
                 product.setPrice(driver.findElement(By.id("priceblock_ourprice")).getText().trim());
             } catch (Exception ex) {
+                log.warn("Preço não encontrado para URL {}: {}", url, ex.toString());
                 product.setPrice("Indisponível");
             }
             // Tenta extrair o ASIN do elemento de detalhes
@@ -100,17 +108,21 @@ public class SeleniumScraper {
                 List<WebElement> list = detailDiv.findElements(By.tagName("li"));
                 for (WebElement li : list) {
                     if (li.getText().contains("ASIN")) {
-                        product.setAsin(li.getText().split(":")[1].trim());
-                        break;
+                        String[] parts = li.getText().split(":");
+                        if (parts.length > 1) {
+                            product.setAsin(parts[1].trim());
+                            break;
+                        }
                     }
                 }
             } catch (Exception ex) {
+                log.warn("ASIN não extraído para URL {}: {}", url, ex.toString());
                 product.setAsin("Indisponível");
             }
             product.setExecutedAt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
             return product;
         } catch (Exception e) {
-            log.error("Erro ao extrair produto da URL {}: {}", url, e.getMessage());
+            log.error("Erro ao extrair produto da URL {}: {}", url, e);
             return null;
         } finally {
             if (driver != null) {

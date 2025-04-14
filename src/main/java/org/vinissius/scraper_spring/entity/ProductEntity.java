@@ -35,6 +35,4 @@ public class ProductEntity {
     // Alterado para permitir URLs maiores (por exemplo, 2048 caracteres)
     @Column(length = 2048)
     private String url;
-
-    // Os getters e setters serão gerados pelo Lombok (@Getter, @Setter)
 }

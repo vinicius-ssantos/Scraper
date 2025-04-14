@@ -24,8 +24,8 @@ public class ScraperService {
     }
 
     /**
-     * Faz o scraping da listagem, persiste no banco e retorna a lista de produtos.
-     * Em caso de falha, tenta novamente (até 3 vezes).
+     * Faz o scraping da listagem, persiste os produtos no banco e retorna a lista.
+     * Em caso de falhas, tenta novamente até 3 vezes.
      */
     public List<ProductEntity> scrapeAll(int maxProducts) {
         int attempt = 0;
@@ -36,7 +36,7 @@ public class ScraperService {
                     productRepository.saveAll(results);
                     log.info("Produtos salvos no banco ({} items).", results.size());
                 } else {
-                    log.warn("Nenhum produto extraído. Tentar fallback ou continuar?");
+                    log.warn("Nenhum produto extraído. Verifique se houve mudanças na estrutura do HTML da listagem.");
                 }
                 return results;
             } catch (Exception e) {

@@ -6,5 +6,5 @@ import org.vinissius.scraper_spring.entity.ProductEntity;
 
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
-    // Podemos adicionar métodos custom se necessário
+    // Métodos custom podem ser adicionados aqui se necessário
 }
