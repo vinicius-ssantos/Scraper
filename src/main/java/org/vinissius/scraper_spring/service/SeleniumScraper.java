@@ -24,7 +24,7 @@ public class SeleniumScraper {
 
     private static final Logger log = LoggerFactory.getLogger(SeleniumScraper.class);
 
-    // O WebDriver injetado é de escopo "prototype" (definido em WebDriverConfig)
+    // O WebDriver principal, de escopo prototype
     private final WebDriver webDriver;
 
     public SeleniumScraper(WebDriver webDriver) {
@@ -33,96 +33,95 @@ public class SeleniumScraper {
 
     /**
      * Faz o scraping da página de listagem de produtos e extrai as informações de cada produto.
-     *
-     * @param maxProducts número máximo de produtos a extrair
-     * @return lista de ProductEntity
      */
     public List<ProductEntity> scrapeListing(int maxProducts) {
         log.info("Iniciando scraping da listagem...");
         List<ProductEntity> products = new ArrayList<>();
         try {
+            // Abre a listagem
             webDriver.get("https://www.amazon.com.br/s?k=Displayport+KVM+Switch+2+monitores+2");
+
+            // Espera elementos na tela
             WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div[data-asin].s-result-item")));
+
+            // Coleta itens
             List<WebElement> items = webDriver.findElements(By.cssSelector("div[data-asin].s-result-item"));
 
             int count = 0;
             for (WebElement item : items) {
                 if (count >= maxProducts) break;
                 try {
-                    // Tenta pegar o link do produto usando o seletor principal
-                    WebElement link = null;
-                    try {
-                        link = item.findElement(By.cssSelector("a.a-link-normal"));
-                    } catch (Exception e) {
-                        log.warn("Seletor primário não retornou elementos, tentando seletor alternativo. Erro: {}", e.getMessage());
-                        // Se desejar, adicione um seletor alternativo aqui, por exemplo:
-                        link = item.findElement(By.cssSelector("a.s-link-style"));
-                    }
+                    // Extrai link
+                    WebElement link = item.findElement(By.cssSelector("a.a-link-normal"));
                     String productUrl = link.getAttribute("href");
                     productUrl = cleanProductUrl(productUrl);
-                    // Extrai os dados do produto com método separado
+
+                    // Extrai dados do produto numa nova instância de WebDriver
                     ProductEntity product = scrapeProduct(productUrl);
                     if (product != null) {
                         products.add(product);
                         count++;
                     }
                 } catch (Exception e) {
-                    log.warn("Falha ao extrair um produto da listagem: {}", e);
+                    log.warn("Falha ao extrair um produto: {}", e.getMessage());
                 }
             }
         } catch (Exception e) {
-            log.error("Erro ao executar scraping da listagem: {}", e);
+            log.error("Erro ao executar scraping da listagem: {}", e.getMessage());
         } finally {
+            // Fecha este driver (listagem)
             webDriver.quit();
         }
         return products;
     }
 
     /**
-     * Cria uma nova instância do WebDriver para acessar a página do produto e extrair os dados.
-     *
-     * @param url URL do produto
-     * @return ProductEntity com os dados extraídos ou null, se ocorrer erro
+     * Abre uma *nova* instância do WebDriver para extrair dados de 1 produto.
      */
     private ProductEntity scrapeProduct(String url) {
         WebDriver driver = null;
         try {
             driver = WebDriverManagerUtil.getDriver();
             driver.get(url);
+
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.presenceOfElementLocated(By.id("productTitle")));
 
             ProductEntity product = new ProductEntity();
             product.setUrl(url);
+
+            // Título
             product.setTitle(driver.findElement(By.id("productTitle")).getText().trim());
+
+            // Preço (talvez "priceblock_ourprice" não exista mais -> tente fallback)
             try {
                 product.setPrice(driver.findElement(By.id("priceblock_ourprice")).getText().trim());
             } catch (Exception ex) {
-                log.warn("Preço não encontrado para URL {}: {}", url, ex.toString());
                 product.setPrice("Indisponível");
             }
-            // Tenta extrair o ASIN do elemento de detalhes
+
+            // Tenta extrair o ASIN nos bullets (pode mudar dependendo do layout)
             try {
                 WebElement detailDiv = driver.findElement(By.id("detailBullets_feature_div"));
                 List<WebElement> list = detailDiv.findElements(By.tagName("li"));
                 for (WebElement li : list) {
                     if (li.getText().contains("ASIN")) {
-                        String[] parts = li.getText().split(":");
-                        if (parts.length > 1) {
-                            product.setAsin(parts[1].trim());
-                            break;
-                        }
+                        product.setAsin(li.getText().split(":")[1].trim());
+                        break;
                     }
                 }
             } catch (Exception ex) {
-                log.warn("ASIN não extraído para URL {}: {}", url, ex.toString());
                 product.setAsin("Indisponível");
             }
-            product.setExecutedAt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
+            // Timestamp
+            product.setExecutedAt(LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
             return product;
         } catch (Exception e) {
-            log.error("Erro ao extrair produto da URL {}: {}", url, e);
+            log.error("Erro ao extrair produto da URL {}: {}", url, e.getMessage());
             return null;
         } finally {
             if (driver != null) {

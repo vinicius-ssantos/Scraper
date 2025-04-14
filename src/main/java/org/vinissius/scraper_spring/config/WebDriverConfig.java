@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Scope;
 
 /**
  * Configuração do WebDriver como bean do Spring.
- * A anotação @Scope("prototype") faz com que cada injeção gere um driver novo.
+ * @Scope("prototype") faz cada injeção gerar um driver novo.
  */
 @Configuration
 public class WebDriverConfig {
@@ -20,7 +20,7 @@ public class WebDriverConfig {
     public WebDriver webDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        // Executa o Chrome em modo headless (remova se quiser visualizar a execução)
+        // Executa Chrome em modo headless (remover se quiser ver o navegador)
         options.addArguments("--headless", "--disable-gpu", "--no-sandbox");
         return new ChromeDriver(options);
     }
