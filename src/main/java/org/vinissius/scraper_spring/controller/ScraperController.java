@@ -1,8 +1,8 @@
-package org.vinissius.scraper.controller;
+package org.vinissius.scraper_spring.controller;
 
 import org.springframework.web.bind.annotation.*;
-import org.vinissius.scraper.entity.ProductEntity;
-import org.vinissius.scraper.service.ScraperService;
+import org.vinissius.scraper_spring.entity.ProductEntity;
+import org.vinissius.scraper_spring.service.ScraperService;
 
 import java.util.List;
 

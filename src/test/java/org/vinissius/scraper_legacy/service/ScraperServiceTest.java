@@ -1,10 +1,12 @@
-package org.vinissius.scraper.service;
+package org.vinissius.scraper_legacy.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.vinissius.scraper.entity.ProductEntity;
-import org.vinissius.scraper.repository.ProductRepository;
+import org.vinissius.scraper_spring.entity.ProductEntity;
+import org.vinissius.scraper_spring.repository.ProductRepository;
+import org.vinissius.scraper_spring.service.ScraperService;
+import org.vinissius.scraper_spring.service.SeleniumScraper;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,13 +1,13 @@
-package org.vinissius.scraper.main;
+package org.vinissius.scraper_legacy.main;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.openqa.selenium.WebDriver;
-import org.vinissius.scraper.driver.SeleniumDriverManager;
-import org.vinissius.scraper.db.DatabaseManager;
-import org.vinissius.scraper.model.Product;
-import org.vinissius.scraper.service.Scraper;
+import org.vinissius.scraper_legacy.driver.SeleniumDriverManager;
+import org.vinissius.scraper_legacy.db.DatabaseManager;
+import org.vinissius.scraper_legacy.model.Product;
+import org.vinissius.scraper_legacy.service.Scraper;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

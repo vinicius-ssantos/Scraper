@@ -1,4 +1,4 @@
-package org.vinissius.scraper;
+package org.vinissius.scraper_spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

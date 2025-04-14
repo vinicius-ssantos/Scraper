@@ -1,14 +1,13 @@
-package org.vinissius.scraper.service;
+package org.vinissius.scraper_spring.service;
 
+import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-import org.vinissius.scraper.entity.ProductEntity;
-import org.vinissius.scraper.repository.ProductRepository;
+import org.vinissius.scraper_spring.entity.ProductEntity;
+import org.vinissius.scraper_spring.repository.ProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class ScraperService {
@@ -23,10 +22,6 @@ public class ScraperService {
         this.seleniumScraper = seleniumScraper;
     }
 
-    /**
-     * Faz o scraping da listagem, retorna e persiste no banco.
-     * Se falhar, tenta um backoff simples.
-     */
     public List<ProductEntity> scrapeAll(int maxProducts) {
         int attempt = 0;
         while (attempt < 3) {
@@ -43,11 +38,10 @@ public class ScraperService {
                 log.error("Erro no scraping. Attempt = {}. Retrying...", attempt, e);
                 attempt++;
                 try {
-                    TimeUnit.SECONDS.sleep(5L * attempt);
+                    Thread.sleep(5000L * attempt);
                 } catch (InterruptedException ignored) {}
             }
         }
-        // Se chegou aqui, falhou definitivamente
         return new ArrayList<>();
     }
 }

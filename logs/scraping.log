@@ -29,3 +29,68 @@
 2025-04-13 20:02:57,897 INFO  [main] o.v.scraper.main.AmazonScraper - Produtos salvos no banco de dados.
 2025-04-13 20:02:57,929 INFO  [main] o.v.scraper.main.AmazonScraper - Dados exportados para JSON: outputs/products_info_20250413_200257.json
 2025-04-13 20:02:57,929 INFO  [main] o.v.scraper.main.AmazonScraper - Extração concluída.
+2025-04-13 20:33:52,153 INFO  [main] o.v.scraper.service.ScraperService - Produtos salvos no banco (1 items).
+2025-04-13 20:34:09,360 INFO  [main] o.v.scraper.SpringScraperApplication - Starting SpringScraperApplication using Java 22.0.1 with PID 21312 (C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava\target\classes started by Vinicius in C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava)
+2025-04-13 20:34:09,362 INFO  [main] o.v.scraper.SpringScraperApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 20:34:10,159 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 20:34:10,252 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interfaces.
+2025-04-13 20:34:10,997 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-04-13 20:34:11,009 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 20:34:11,010 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 20:34:11,010 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2025-04-13 20:34:11,146 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 20:34:11,148 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1731 ms
+2025-04-13 20:34:11,372 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 20:34:11,441 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-04-13 20:34:11,812 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 20:34:12,048 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=SA
+2025-04-13 20:34:12,050 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 20:34:12,090 INFO  [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-04-13 20:34:12,881 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-13 20:34:12,895 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 20:34:13,295 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-13 20:34:13,796 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 20:34:13,829 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-13 20:34:13,844 INFO  [main] o.v.scraper.SpringScraperApplication - Started SpringScraperApplication in 5.109 seconds (process running for 5.994)
+2025-04-13 20:44:50,227 INFO  [main] o.v.s.service.ScraperService - Produtos salvos no banco (1 items).
+2025-04-13 20:45:20,930 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 20:45:20,957 INFO  [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-04-13 20:45:21,044 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 20:45:21,062 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 20:45:33,855 INFO  [main] o.v.s.SpringScraperApplication - Starting SpringScraperApplication using Java 22.0.1 with PID 19820 (C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava\target\classes started by Vinicius in C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava)
+2025-04-13 20:45:33,859 INFO  [main] o.v.s.SpringScraperApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 20:45:34,819 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 20:45:34,939 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100 ms. Found 1 JPA repository interfaces.
+2025-04-13 20:45:35,818 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-04-13 20:45:35,833 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 20:45:35,835 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 20:45:35,835 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2025-04-13 20:45:35,986 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 20:45:35,988 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2059 ms
+2025-04-13 20:45:36,222 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 20:45:36,297 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-04-13 20:45:36,665 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 20:45:36,901 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=SA
+2025-04-13 20:45:36,903 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 20:45:36,939 INFO  [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-04-13 20:45:37,680 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-13 20:45:37,691 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 20:45:38,111 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-13 20:45:38,473 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 20:45:38,496 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-13 20:45:38,507 INFO  [main] o.v.s.SpringScraperApplication - Started SpringScraperApplication in 5.305 seconds (process running for 6.251)
+2025-04-13 20:50:38,913 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 20:50:38,921 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 20:50:38,983 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 61 ms
+2025-04-13 20:50:39,161 INFO  [http-nio-8080-exec-2] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 20:50:40,955 INFO  [http-nio-8080-exec-2] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:50:40,977 INFO  [http-nio-8080-exec-2] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:50:43,229 WARN  [http-nio-8080-exec-2] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 20:50:43,229 WARN  [http-nio-8080-exec-2] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 20:50:43,443 WARN  [http-nio-8080-exec-2] o.v.s.service.ScraperService - Nenhum produto extraído. Tentar fallback ou continuar?
+2025-04-13 20:54:18,715 INFO  [http-nio-8080-exec-4] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 20:54:18,937 INFO  [http-nio-8080-exec-4] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 20:54:18,963 INFO  [http-nio-8080-exec-4] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 20:54:32,920 WARN  [http-nio-8080-exec-4] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 20:54:32,921 WARN  [http-nio-8080-exec-4] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 20:54:33,649 WARN  [http-nio-8080-exec-4] o.v.s.service.ScraperService - Nenhum produto extraído. Tentar fallback ou continuar?

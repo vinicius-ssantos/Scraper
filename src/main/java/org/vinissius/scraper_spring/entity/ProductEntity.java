@@ -1,4 +1,4 @@
-package org.vinissius.scraper.entity;
+package org.vinissius.scraper_spring.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
