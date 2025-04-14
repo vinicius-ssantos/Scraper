@@ -18,13 +18,10 @@ public class WebDriverConfig {
     @Bean
     @Scope("prototype")
     public WebDriver webDriver() {
-        // WebDriverManager faz o download/gerenciamento do ChromeDriver
         WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");   // se quiser ver o navegador, remova
-        options.addArguments("--disable-gpu", "--no-sandbox");
-
+        // Executa o Chrome em modo headless (remova se quiser visualizar a execução)
+        options.addArguments("--headless", "--disable-gpu", "--no-sandbox");
         return new ChromeDriver(options);
     }
 }

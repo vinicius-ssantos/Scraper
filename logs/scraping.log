@@ -94,3 +94,453 @@
 2025-04-13 20:54:32,920 WARN  [http-nio-8080-exec-4] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
 2025-04-13 20:54:32,921 WARN  [http-nio-8080-exec-4] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 2025-04-13 20:54:33,649 WARN  [http-nio-8080-exec-4] o.v.s.service.ScraperService - Nenhum produto extraído. Tentar fallback ou continuar?
+2025-04-13 21:09:04,215 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:09:04,237 INFO  [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-04-13 21:09:04,280 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 21:09:04,304 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 21:09:14,414 INFO  [main] o.v.s.SpringScraperApplication - Starting SpringScraperApplication using Java 22.0.1 with PID 13596 (C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava\target\classes started by Vinicius in C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava)
+2025-04-13 21:09:14,418 INFO  [main] o.v.s.SpringScraperApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 21:09:15,518 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 21:09:15,607 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interfaces.
+2025-04-13 21:09:18,065 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-04-13 21:09:18,080 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:09:18,081 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 21:09:18,082 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2025-04-13 21:09:18,252 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 21:09:18,254 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3745 ms
+2025-04-13 21:09:18,519 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 21:09:18,611 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-04-13 21:09:19,072 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 21:09:19,402 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=SA
+2025-04-13 21:09:19,404 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 21:09:19,452 INFO  [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-04-13 21:09:20,488 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-13 21:09:20,500 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:09:21,451 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:09:21,478 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:09:24,633 WARN  [main] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:09:24,634 WARN  [main] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:09:24,818 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-13 21:09:25,564 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:09:25,585 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-13 21:09:25,598 INFO  [main] o.v.s.SpringScraperApplication - Started SpringScraperApplication in 13.958 seconds (process running for 15.38)
+2025-04-13 21:09:30,775 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 21:09:30,776 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 21:09:30,778 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-04-13 21:09:30,849 INFO  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 21:09:33,164 WARN  [AsyncHttpClient-1-4] o.a.netty.handler.WebSocketHandler - onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-04-13 21:09:33,168 WARN  [AsyncHttpClient-1-4] o.o.selenium.remote.http.WebSocket - Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-04-13 21:09:33,326 WARN  [http-nio-8080-exec-1] o.v.s.service.ScraperService - Nenhum produto extraído. Tentar fallback ou continuar?
+2025-04-13 21:10:22,296 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:10:22,297 INFO  [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-04-13 21:10:22,497 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 21:10:22,506 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 21:10:34,532 INFO  [main] o.v.s.SpringScraperApplication - Starting SpringScraperApplication using Java 22.0.1 with PID 11600 (C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava\target\classes started by Vinicius in C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava)
+2025-04-13 21:10:34,536 INFO  [main] o.v.s.SpringScraperApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 21:10:35,442 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 21:10:35,533 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 1 JPA repository interfaces.
+2025-04-13 21:10:36,321 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-04-13 21:10:36,332 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:10:36,333 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 21:10:36,333 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2025-04-13 21:10:36,475 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 21:10:36,477 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1877 ms
+2025-04-13 21:10:36,784 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 21:10:36,859 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-04-13 21:10:37,216 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 21:10:37,470 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=SA
+2025-04-13 21:10:37,472 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 21:10:37,518 INFO  [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-04-13 21:10:38,325 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-13 21:10:38,333 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:10:39,111 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:10:39,136 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:10:41,767 WARN  [main] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:10:41,768 WARN  [main] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:10:41,854 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-13 21:10:42,606 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:10:42,631 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-13 21:10:42,652 INFO  [main] o.v.s.SpringScraperApplication - Started SpringScraperApplication in 12.033 seconds (process running for 18.905)
+2025-04-13 21:10:49,081 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 21:10:49,081 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 21:10:49,083 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-13 21:10:49,132 INFO  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 21:10:51,537 WARN  [http-nio-8080-exec-1] o.v.s.service.ScraperService - Nenhum produto extraído. Tentar fallback ou continuar?
+2025-04-13 21:14:50,213 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:14:50,218 INFO  [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-04-13 21:14:50,389 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 21:14:50,401 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 21:15:45,855 INFO  [main] o.v.s.SpringScraperApplication - Starting SpringScraperApplication using Java 22.0.1 with PID 19852 (C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava\target\classes started by Vinicius in C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava)
+2025-04-13 21:15:45,859 INFO  [main] o.v.s.SpringScraperApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 21:15:46,730 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 21:15:46,814 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 1 JPA repository interfaces.
+2025-04-13 21:15:47,750 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-04-13 21:15:47,765 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:15:47,766 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 21:15:47,766 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2025-04-13 21:15:47,926 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 21:15:47,927 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1997 ms
+2025-04-13 21:15:48,170 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 21:15:48,258 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-04-13 21:15:48,641 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 21:15:48,899 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=SA
+2025-04-13 21:15:48,901 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 21:15:48,943 INFO  [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-04-13 21:15:49,809 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-13 21:15:49,817 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:15:50,593 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:15:50,614 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:15:52,429 WARN  [main] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:15:52,429 WARN  [main] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:15:52,498 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-13 21:15:52,955 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:15:52,979 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-13 21:15:52,995 INFO  [main] o.v.s.SpringScraperApplication - Started SpringScraperApplication in 7.785 seconds (process running for 8.747)
+2025-04-13 21:16:00,109 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 21:16:00,110 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 21:16:00,111 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-13 21:16:00,159 INFO  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 21:16:02,780 WARN  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Falha ao extrair um produto: no such element: Unable to locate element: {"method":"css selector","selector":"a.a-link-normal"}
+  (Session info: chrome=135.0.7049.85)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a814165c5c1905481edf85b8a08f402c, findChildElement {id=f.71C7C53F50A88B8B5633677739D95CE2.d.D4E9DECA8A8E91D9AF50370987007F2E.e.90, using=css selector, value=a.a-link-normal}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\Vinicius\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60525}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60525/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a814165c5c1905481edf85b8a08f402c
+2025-04-13 21:16:03,004 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:16:03,043 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:16:04,274 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:16:04,274 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:16:07,847 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:16:07,852 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:16:08,695 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:16:08,696 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:16:11,857 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:16:11,863 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:16:12,673 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:16:12,673 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:16:17,848 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:16:17,854 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:16:18,744 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:16:18,744 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:16:21,675 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:16:21,680 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:16:22,526 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:16:22,526 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:16:27,917 WARN  [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 22001, SQLState: 22001
+2025-04-13 21:16:27,918 ERROR [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - Value too long for column "URL CHARACTER VARYING(255)": "'https://www.amazon.com.br/Displayport-KVM-Switch-Monitores-MLEEDA/dp/B0C2TDC5LQ... (590)"; SQL statement:
+insert into products (id, asin, bullet_points, executed_at, images, price, product_description, rating, review_count, seller_info, title, url) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2025-04-13 21:16:27,942 ERROR [http-nio-8080-exec-1] o.v.s.service.ScraperService - Erro no scraping. Attempt = 0. Retrying...
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:272)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:232)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218)
+	at jdk.proxy2/jdk.proxy2.$Proxy102.saveAll(Unknown Source)
+	at org.vinissius.scraper_spring.service.ScraperService.scrapeAll(ScraperService.java:32)
+	at org.vinissius.scraper_spring.controller.ScraperController.scrape(ScraperController.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:537)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.hibernate.exception.DataException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:53)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57)
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:42)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3342)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3980)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:653)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:283)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:264)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:340)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:286)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:192)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:122)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:184)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:129)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:53)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:737)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:721)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360)
+	at jdk.proxy2/jdk.proxy2.$Proxy98.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)
+	at jdk.proxy2/jdk.proxy2.$Proxy98.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:613)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.saveAll(SimpleJpaRepository.java:639)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.saveAll(SimpleJpaRepository.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 57 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLDataException: Value too long for column "URL CHARACTER VARYING(255)": "'https://www.amazon.com.br/Displayport-KVM-Switch-Monitores-MLEEDA/dp/B0C2TDC5LQ... (590)"; SQL statement:
+insert into products (id, asin, bullet_points, executed_at, images, price, product_description, rating, review_count, seller_info, title, url) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getValueTooLongException(DbException.java:322)
+	at org.h2.value.Value.getValueTooLongException(Value.java:2573)
+	at org.h2.value.Value.convertToVarchar(Value.java:1261)
+	at org.h2.value.Value.convertTo(Value.java:1117)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:926)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.CommandContainer.executeUpdateWithGeneratedKeys(CommandContainer.java:242)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:163)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:209)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:169)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 106 common frames omitted
+2025-04-13 21:16:32,950 INFO  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 21:16:32,953 ERROR [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Erro ao executar scraping da listagem: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, get {url=https://www.amazon.com.br/s?k=Displayport+KVM+Switch+2+monitores+2}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\Vinicius\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60525}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60525/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2025-04-13 21:16:32,953 WARN  [http-nio-8080-exec-1] o.v.s.service.ScraperService - Nenhum produto extraído. Tentar fallback ou continuar?
+2025-04-13 21:18:32,928 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:18:32,939 INFO  [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-04-13 21:18:33,020 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 21:18:33,039 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 21:18:39,398 INFO  [main] o.v.s.SpringScraperApplication - Starting SpringScraperApplication using Java 22.0.1 with PID 3304 (C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava\target\classes started by Vinicius in C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava)
+2025-04-13 21:18:39,402 INFO  [main] o.v.s.SpringScraperApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 21:18:40,429 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 21:18:40,513 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interfaces.
+2025-04-13 21:18:41,470 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-04-13 21:18:41,485 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:18:41,486 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 21:18:41,486 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2025-04-13 21:18:41,640 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 21:18:41,642 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2163 ms
+2025-04-13 21:18:41,899 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 21:18:41,988 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-04-13 21:18:42,391 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 21:18:42,646 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=SA
+2025-04-13 21:18:42,647 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 21:18:42,691 INFO  [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-04-13 21:18:43,647 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-13 21:18:43,657 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:18:44,387 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:18:44,423 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:18:46,917 WARN  [main] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:18:46,918 WARN  [main] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:18:47,016 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-13 21:18:47,578 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:18:47,594 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-13 21:18:47,604 INFO  [main] o.v.s.SpringScraperApplication - Started SpringScraperApplication in 8.955 seconds (process running for 10.071)
+2025-04-13 21:18:50,311 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 21:18:50,311 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 21:18:50,313 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-04-13 21:18:50,377 INFO  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 21:18:52,828 WARN  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Falha ao extrair um produto: no such element: Unable to locate element: {"method":"css selector","selector":"a.a-link-normal"}
+  (Session info: chrome=135.0.7049.85)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c2d29e82bdb48802bad78575d497b0b0, findChildElement {id=f.34A24B38E420FA3D2EC8FC6595C9F42F.d.8A615AD1DA854FB3BA4543826F7DED60.e.88, using=css selector, value=a.a-link-normal}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\Vinicius\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60861}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60861/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c2d29e82bdb48802bad78575d497b0b0
+2025-04-13 21:18:52,889 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:18:52,896 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:18:53,746 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:18:53,747 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:18:57,677 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:18:57,687 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:18:58,595 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:18:58,595 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:19:01,759 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:19:01,765 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:19:02,544 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:19:02,544 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:19:05,634 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:19:05,637 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:19:06,425 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:19:06,426 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:19:09,357 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:19:09,361 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:19:10,219 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:19:10,219 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:19:13,513 INFO  [http-nio-8080-exec-1] o.v.s.service.ScraperService - Produtos salvos no banco (5 items).
+2025-04-13 21:27:28,865 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:27:28,913 INFO  [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-04-13 21:27:28,991 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 21:27:29,016 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 21:27:43,114 INFO  [main] o.v.s.SpringScraperApplication - Starting SpringScraperApplication using Java 22.0.1 with PID 9940 (C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava\target\classes started by Vinicius in C:\Users\Vinicius\IntellijProjects\Scraper\ScraperJava)
+2025-04-13 21:27:43,119 INFO  [main] o.v.s.SpringScraperApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 21:27:44,283 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 21:27:44,384 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interfaces.
+2025-04-13 21:27:45,420 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-04-13 21:27:45,436 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:27:45,437 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 21:27:45,438 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2025-04-13 21:27:45,606 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 21:27:45,608 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2409 ms
+2025-04-13 21:27:45,867 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 21:27:45,945 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-04-13 21:27:46,345 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 21:27:46,602 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=SA
+2025-04-13 21:27:46,604 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 21:27:46,659 INFO  [main] SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-04-13 21:27:47,765 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-13 21:27:47,779 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:27:48,608 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:27:48,636 INFO  [main] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:27:54,765 WARN  [main] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:27:54,766 WARN  [main] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:27:54,860 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-13 21:27:55,711 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:27:55,734 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-13 21:27:55,747 INFO  [main] o.v.s.SpringScraperApplication - Started SpringScraperApplication in 13.361 seconds (process running for 14.398)
+2025-04-13 21:28:12,837 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 21:28:12,837 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 21:28:12,839 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-04-13 21:28:12,894 INFO  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Iniciando scraping da listagem...
+2025-04-13 21:28:15,768 WARN  [http-nio-8080-exec-1] o.v.s.service.SeleniumScraper - Falha ao extrair um produto: no such element: Unable to locate element: {"method":"css selector","selector":"a.a-link-normal"}
+  (Session info: chrome=135.0.7049.85)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cb5651f9eff1d834df5004fcdebca323, findChildElement {id=f.50ECD1B791BF60248A000620E1114036.d.D4C0F888044506BE8A67624BD7D6280D.e.104, using=css selector, value=a.a-link-normal}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\Vinicius\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61249}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61249/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cb5651f9eff1d834df5004fcdebca323
+2025-04-13 21:28:15,860 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:28:15,872 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:28:16,872 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:28:16,872 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:28:20,546 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:28:20,558 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:28:21,376 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:28:21,376 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:28:25,290 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:28:25,297 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:28:26,111 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:28:26,112 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:28:29,469 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:28:29,475 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:28:30,353 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:28:30,354 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:28:33,686 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 135.0.7049.84 (resolved driver for Chrome 135)
+2025-04-13 21:28:33,693 INFO  [http-nio-8080-exec-1] i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Vinicius\.cache\selenium\chromedriver\win64\135.0.7049.84\chromedriver.exe
+2025-04-13 21:28:34,478 WARN  [http-nio-8080-exec-1] o.o.s.devtools.CdpVersionFinder - Unable to find CDP implementation matching 135
+2025-04-13 21:28:34,478 WARN  [http-nio-8080-exec-1] o.o.selenium.chromium.ChromiumDriver - Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.9.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-04-13 21:28:37,794 INFO  [http-nio-8080-exec-1] o.v.s.service.ScraperService - Produtos salvos no banco (5 items).

@@ -19,16 +19,22 @@ public class ProductEntity {
     private String price;
     private String rating;
     private String reviewCount;
+
     @Column(length = 2000)
-    private String bulletPoints; // JSON
+    private String bulletPoints; // Armazena JSON
+
     @Column(length = 2000)
     private String productDescription;
+
     @Column(length = 2000)
-    private String images; // JSON
+    private String images; // Armazena JSON
+
     private String sellerInfo;
     private String executedAt;
+
+    // Alterado para permitir URLs maiores (por exemplo, 2048 caracteres)
+    @Column(length = 2048)
     private String url;
 
-    // getters e setters
-    // ...
+    // Os getters e setters serão gerados pelo Lombok (@Getter, @Setter)
 }

@@ -17,7 +17,7 @@ public class ScraperController {
     }
 
     /**
-     * Ex: GET /api/scraper?max=5
+     * Exemplo de chamada: GET /api/scraper?max=5
      */
     @GetMapping
     public List<ProductEntity> scrape(@RequestParam(name = "max", defaultValue = "10") int max) {
