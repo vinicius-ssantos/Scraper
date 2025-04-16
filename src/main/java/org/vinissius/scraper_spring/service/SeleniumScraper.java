@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.vinissius.scraper_spring.entity.ProductEntity;
+import org.vinissius.scraper_spring.util.DelayUtil;
 import org.vinissius.scraper_spring.util.WebDriverManagerUtil;
 
 import java.time.Duration;
@@ -63,6 +64,9 @@ public class SeleniumScraper {
                         products.add(product);
                         count++;
                     }
+
+                    // Aplica um delay aleatório entre as requisições para simular comportamento humano
+                    DelayUtil.sleepRandomDelay();
                 } catch (Exception e) {
                     log.warn("Falha ao extrair um produto: {}", e.getMessage());
                 }
@@ -94,14 +98,14 @@ public class SeleniumScraper {
             // Título
             product.setTitle(driver.findElement(By.id("productTitle")).getText().trim());
 
-            // Preço (talvez "priceblock_ourprice" não exista mais -> tente fallback)
+            // Preço (tenta o seletor "priceblock_ourprice", com fallback)
             try {
                 product.setPrice(driver.findElement(By.id("priceblock_ourprice")).getText().trim());
             } catch (Exception ex) {
                 product.setPrice("Indisponível");
             }
 
-            // Tenta extrair o ASIN nos bullets (pode mudar dependendo do layout)
+            // Extrai ASIN a partir da seção de detalhes
             try {
                 WebElement detailDiv = driver.findElement(By.id("detailBullets_feature_div"));
                 List<WebElement> list = detailDiv.findElements(By.tagName("li"));
@@ -115,7 +119,7 @@ public class SeleniumScraper {
                 product.setAsin("Indisponível");
             }
 
-            // Timestamp
+            // Timestamp da execução
             product.setExecutedAt(LocalDateTime.now()
                     .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 
