@@ -98,7 +98,11 @@ public class SeleniumScraper {
         try {
             String url = "https://www.amazon.com.br/dp/" + asin;
             localDriver.get(url);
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ppd")));
+            wait.until(ExpectedConditions.or(
+                    ExpectedConditions.presenceOfElementLocated(By.id("ppd")),
+                    ExpectedConditions.presenceOfElementLocated(By.id("centerCol")) // fallback
+            ));
+
 
             String price = tryGetText(localDriver, By.id("priceblock_ourprice"));
             if (price.isEmpty()) {
