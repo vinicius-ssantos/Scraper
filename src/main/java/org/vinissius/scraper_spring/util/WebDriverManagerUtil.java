@@ -13,6 +13,15 @@ public class WebDriverManagerUtil {
         String userAgent = UserAgentProvider.getRandomUserAgent();
         options.addArguments("--user-agent=" + userAgent);
 
+        // Obtém proxy dinâmico via API getproxylist.com
+        String proxyAddress = ProxyRotatorService.getProxy();
+        if (proxyAddress != null) {
+            options.addArguments("--proxy-server=http://" + proxyAddress);
+            System.out.println("Usando proxy: " + proxyAddress);
+        } else {
+            System.out.println("Nenhum proxy obtido; prosseguindo sem proxy.");
+        }
+
         // Outras configurações essenciais
         options.addArguments("--headless=new");
         options.addArguments("--disable-gpu");
