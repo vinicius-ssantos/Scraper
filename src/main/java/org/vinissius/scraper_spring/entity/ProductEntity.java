@@ -20,7 +20,8 @@ public class ProductEntity {
     private String rating;
     private String reviewCount;
 
-    @Column(length = 2000)
+    @Lob
+    @Column
     private String bulletPoints; // Armazena JSON
 
     @Column(length = 2000)
