@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-scraper-deployment
+  labels:
+    app: my-scraper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-scraper
+  template:
+    metadata:
+      labels:
+        app: my-scraper
+    spec:
+      containers:
+        - name: my-scraper
+          image: myuser/my-scraper:latest
+          # ^ Substituir pela imagem que você fez push em algum registry
+          ports:
+            - containerPort: 8080
+          # Se precisar de variáveis de ambiente:
+          #env:
+          #  - name: MY_ENV
+          #    value: "some_value"

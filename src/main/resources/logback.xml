@@ -1,21 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+
+    <!-- Appender de console (opcional, para ver logs no console) -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%highlight(%date{HH:mm:ss.SSS} [%thread] %-5level) %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
+    <!-- Appender de arquivo com rotação baseada em data/hora -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Nome base do arquivo de log (atual) -->
         <file>logs/scraping.log</file>
+
+        <!-- Políticas de rotação por data -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Nome dos arquivos rotacionados: logs/scraping_2025-04-13.log, etc. -->
             <fileNamePattern>logs/scraping_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Mantém no histórico 7 dias, por exemplo -->
             <maxHistory>7</maxHistory>
         </rollingPolicy>
+
         <encoder>
+            <!-- Formato do log -->
             <pattern>%date %-5level [%thread] %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
+    <!-- Nível raiz do logger e inclusão dos appenders -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>

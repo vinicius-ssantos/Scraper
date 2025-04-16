@@ -1,11 +1,11 @@
-package org.vinissius.scraper.service;
+package org.vinissius.scraper_legacy.service;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.vinissius.scraper.model.Product;
+import org.vinissius.scraper_legacy.model.Product;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
