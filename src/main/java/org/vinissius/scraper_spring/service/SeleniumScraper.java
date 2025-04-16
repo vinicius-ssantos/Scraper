@@ -1,6 +1,7 @@
 package org.vinissius.scraper_spring.service;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +12,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.vinissius.scraper_spring.entity.ProductEntity;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +42,9 @@ public class SeleniumScraper {
     private final WebDriver driver;
     private final String amazonUrl;
     private final WebDriverWait wait;
+
+    private static final String SELECTORS_FILE = "selectors.txt";
+
     /**
      * Injeção de dependências via construtor:
      * @param driver    WebDriver (Bean definido em SeleniumConfig)
@@ -92,43 +102,73 @@ public class SeleniumScraper {
 
     private ProductEntity scrapeProductByAsin(String asin, String title) {
         long start = System.currentTimeMillis();
-        WebDriver localDriver = createIsolatedDriver();
-        WebDriverWait wait = new WebDriverWait(localDriver, Duration.ofSeconds(10));
+        
+        WebDriver driver = createIsolatedDriver();
+
+
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        String url = "https://www.amazon.com.br/dp/" + asin;
+
 
         try {
-            String url = "https://www.amazon.com.br/dp/" + asin;
-            localDriver.get(url);
+
+            driver.get(url);
+            log.info("Acessando URL: {}", url);
+
+
             wait.until(ExpectedConditions.or(
                     ExpectedConditions.presenceOfElementLocated(By.id("ppd")),
                     ExpectedConditions.presenceOfElementLocated(By.id("centerCol")) // fallback
             ));
 
+            List<By> selectors = loadSelectors();
+            By foundSelector = wait.until(d -> {
+                for (By selector : selectors) {
+                    try {
+                        if (d.findElement(selector).isDisplayed()) {
+                            return selector;
+                        }
+                    } catch (Exception ignored) {}
+                }
+                return null;
+            });
 
-            String price = tryGetText(localDriver, By.id("priceblock_ourprice"));
-            if (price.isEmpty()) {
-                price = tryGetText(localDriver, By.id("priceblock_dealprice"));
+            if (foundSelector != null) {
+                log.info("Produto [{}] carregado com seletor: {}", asin, foundSelector);
+                saveNewSelector(foundSelector, url);
+
+
+            } else {
+                throw new TimeoutException("Nenhum seletor encontrado");
             }
 
-            String rating = tryGetText(localDriver, By.cssSelector("span.a-icon-alt"));
-            String reviewCount = tryGetText(localDriver, By.id("acrCustomerReviewText"));
+            String price = tryGetText(driver, By.id("priceblock_ourprice"));
+            if (price.isEmpty()) {
+                price = tryGetText(driver, By.id("priceblock_dealprice"));
+            }
+
+            String rating = tryGetText(driver, By.cssSelector("span.a-icon-alt"));
+            String reviewCount = tryGetText(driver, By.id("acrCustomerReviewText"));
 
             List<String> bulletPoints = new ArrayList<>();
             try {
-                List<WebElement> bullets = localDriver.findElements(By.cssSelector("#feature-bullets ul li span"));
+                List<WebElement> bullets = driver.findElements(By.cssSelector("#feature-bullets ul li span"));
                 bulletPoints = bullets.stream().map(WebElement::getText).collect(Collectors.toList());
             } catch (Exception ignored) {}
 
-            String description = tryGetText(localDriver, By.id("productDescription"));
+            String description = tryGetText(driver, By.id("productDescription"));
 
             List<String> images = new ArrayList<>();
             try {
-                List<WebElement> imgs = localDriver.findElements(By.cssSelector("img.a-dynamic-image"));
+                List<WebElement> imgs = driver.findElements(By.cssSelector("img.a-dynamic-image"));
                 images = imgs.stream().map(img -> img.getAttribute("src")).distinct().collect(Collectors.toList());
             } catch (Exception ignored) {}
 
-            String seller = tryGetText(localDriver, By.id("sellerProfileTriggerId"));
+            String seller = tryGetText(driver, By.id("sellerProfileTriggerId"));
             if (seller.isEmpty()) {
-                seller = tryGetText(localDriver, By.id("bylineInfo"));
+                seller = tryGetText(driver, By.id("bylineInfo"));
             }
 
             ProductEntity product = new ProductEntity();
@@ -151,8 +191,25 @@ public class SeleniumScraper {
             log.error("Erro ao extrair produto [{}]: {}", asin, e.getMessage());
             return null;
         } finally {
-            localDriver.quit();
+            driver.quit();
         }
+    }
+
+    private List<By> loadSelectors() {
+        List<By> selectors = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(SELECTORS_FILE))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("id=")) {
+                    selectors.add(By.id(line.substring(3)));
+                } else if (line.startsWith("css=")) {
+                    selectors.add(By.cssSelector(line.substring(4)));
+                }
+            }
+        } catch (IOException e) {
+            log.error("Erro ao ler arquivo de seletores: {}", e.getMessage());
+        }
+        return selectors;
     }
 
     private String tryGetText(WebDriver d, By selector) {
@@ -163,6 +220,51 @@ public class SeleniumScraper {
         }
     }
 
+    private List<By> loadSelectors(String url) {
+        String domain = getDomainFromUrl(url);
+        String filename = "selectors_" + domain + ".txt";
+        List<By> selectors = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("id=")) {
+                    selectors.add(By.id(line.substring(3)));
+                } else if (line.startsWith("css=")) {
+                    selectors.add(By.cssSelector(line.substring(4)));
+                }
+            }
+        } catch (IOException e) {
+            log.warn("Arquivo de seletores não encontrado para [{}]: {}", domain, filename);
+        }
+
+        return selectors;
+    }
+
+    private void saveNewSelector(By selector, String url) {
+        String selectorString = selector.toString(); // Ex: By.id: centerCol
+        String normalized = null;
+
+        if (selectorString.startsWith("By.id: ")) {
+            normalized = "id=" + selectorString.substring(8);
+        } else if (selectorString.startsWith("By.cssSelector: ")) {
+            normalized = "css=" + selectorString.substring(16);
+        }
+
+        if (normalized != null) {
+            String domain = getDomainFromUrl(url);
+            String filename = "selectors_" + domain + ".txt";
+
+            if (!isSelectorInFile(normalized, filename)) {
+                try (FileWriter fw = new FileWriter(filename, true)) {
+                    fw.write(normalized + System.lineSeparator());
+                    log.info("Novo seletor salvo dinamicamente em {}: {}", filename, normalized);
+                } catch (IOException e) {
+                    log.error("Erro ao salvar seletor no arquivo {}: {}", filename, e.getMessage());
+                }
+            }
+        }
+    }
 
     private WebDriver createIsolatedDriver() {
         ChromeOptions options = new ChromeOptions();
@@ -178,6 +280,25 @@ public class SeleniumScraper {
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
         );
         return agents.get(new Random().nextInt(agents.size()));
+    }
+
+    private boolean isSelectorInFile(String selector, String filename) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            return br.lines().anyMatch(line -> line.trim().equals(selector));
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    private String getDomainFromUrl(String url) {
+        try {
+            URI uri = new URI(url);
+            String host = uri.getHost(); // www.amazon.com.br
+            return host.startsWith("www.") ? host.substring(4) : host;
+        } catch (URISyntaxException e) {
+            log.error("Erro ao extrair domínio da URL: {}", e.getMessage());
+            return "default";
+        }
     }
 
     /**
