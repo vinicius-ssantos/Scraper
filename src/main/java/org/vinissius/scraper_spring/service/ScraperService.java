@@ -30,43 +30,20 @@ public class ScraperService {
         this.seleniumScraper = seleniumScraper;
     }
 
-    /**
-     * Faz o scraping da listagem, persiste no banco e retorna a lista de produtos.
-     * Em caso de falha, tenta novamente (até 3 vezes) com backoff exponencial simples.
-     */
-    public List<ProductEntity> scrapeAll(int maxProducts) {
-        int attempt = 0;
-        while (attempt < 3) {
-            try {
-                // 1) Tenta extrair
-                List<ProductEntity> results = seleniumScraper.scrapeListing(maxProducts);
+    public List<ProductEntity> scrapeAll(int max) {
+        log.info("Iniciando scraping de até {} produtos...", max);
 
-                // 2) Se extraiu, salva no banco
-                if (!results.isEmpty()) {
-                    productRepository.saveAll(results);
-                    log.info("Produtos salvos no banco ({} items).", results.size());
+        List<ProductEntity> results = seleniumScraper.scrapeAll(max);
 
-                    // 3) Gera o arquivo JSON de saída
-                    saveAsJson(results);
-                } else {
-                    log.warn("Nenhum produto extraído. Tentar fallback ou seguir?");
-                }
+        log.info("Total de produtos extraídos: {}", results.size());
 
-                return results;
-            } catch (Exception e) {
-                attempt++;
-                log.error("Erro no scraping. Attempt = {}. Retrying...", attempt, e);
+        productRepository.saveAll(results);
+        saveAsJson(results);
 
-                // Backoff exponencial simples: 5 * (2^(attempt-1))
-                long delay = (long) (5 * Math.pow(2, attempt - 1));
-                log.info("Aguardando {} segundos antes de nova tentativa...", delay);
-                try {
-                    TimeUnit.SECONDS.sleep(delay);
-                } catch (InterruptedException ignored) {}
-            }
-        }
-        return new ArrayList<>();
+        return results;
     }
+
+
 
     /**
      * Gera o arquivo "products_info_{timestamp}.json" na pasta 'outputs'.
