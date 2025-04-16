@@ -9,15 +9,18 @@ public class WebDriverManagerUtil {
     public static WebDriver createWebDriver() {
         ChromeOptions options = new ChromeOptions();
 
-        // Adiciona User-Agent aleatório
-        String userAgent = UserAgentProvider.getRandomUserAgent();
-        options.addArguments("--user-agent=" + userAgent);
+        // Ativa o modo headless (sem GUI)
+        options.addArguments("--headless");
 
-        // Outras configurações essenciais
-        options.addArguments("--headless=new");
+        // Outras configurações que ajudam a deixar a execução mais estável:
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
 
+        // Define uma porta para remote debugging (opcional, mas pode ajudar na estabilidade)
+        options.addArguments("--remote-debugging-port=9222");
+
         return new ChromeDriver(options);
+
+
     }
 }
