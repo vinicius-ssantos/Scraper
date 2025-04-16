@@ -1,4 +1,4 @@
-package org.vinissius.scraper.model;
+package org.vinissius.scraper_legacy.model;
 
 import java.util.List;
 

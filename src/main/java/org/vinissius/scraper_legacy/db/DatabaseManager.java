@@ -1,8 +1,8 @@
-package org.vinissius.scraper.db;
+package org.vinissius.scraper_legacy.db;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.vinissius.scraper.model.Product;
+import org.vinissius.scraper_legacy.model.Product;
 
 import java.sql.*;
 import java.util.List;

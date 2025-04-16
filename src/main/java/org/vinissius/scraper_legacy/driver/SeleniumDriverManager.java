@@ -1,4 +1,4 @@
-package org.vinissius.scraper.driver;
+package org.vinissius.scraper_legacy.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
