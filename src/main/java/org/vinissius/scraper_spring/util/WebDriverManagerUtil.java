@@ -1,22 +1,22 @@
 package org.vinissius.scraper_spring.util;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-/**
- * Utilitário para configurar e instanciar o WebDriver.
- */
 public class WebDriverManagerUtil {
 
-    public static WebDriver getDriver() {
-        // Configura o ChromeDriver automaticamente com WebDriverManager
-        WebDriverManager.chromedriver().setup();
-
-        // Cria as opções para o Chrome: executa em modo headless, sem GPU e sem sandbox
+    public static WebDriver createWebDriver() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--disable-gpu", "--no-sandbox");
+
+        // Adiciona User-Agent aleatório
+        String userAgent = UserAgentProvider.getRandomUserAgent();
+        options.addArguments("--user-agent=" + userAgent);
+
+        // Outras configurações essenciais
+        options.addArguments("--headless=new");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
 
         return new ChromeDriver(options);
     }

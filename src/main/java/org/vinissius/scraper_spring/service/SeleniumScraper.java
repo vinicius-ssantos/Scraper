@@ -82,7 +82,7 @@ public class SeleniumScraper {
     private ProductEntity scrapeProduct(String url) {
         WebDriver driver = null;
         try {
-            driver = WebDriverManagerUtil.getDriver();
+            driver = WebDriverManagerUtil.createWebDriver();
             driver.get(url);
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
